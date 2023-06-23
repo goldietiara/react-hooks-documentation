@@ -28,7 +28,7 @@ const ExUseReducer = () => {
 
   return (
     <div className="text-3xl text-center flex flex-col gap-5">
-      <Link href={"/contoh"}>
+      <Link href={"/"}>
         <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
           BACK
         </div>
