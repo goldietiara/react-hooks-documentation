@@ -1,4 +1,4 @@
-import ButtonFit from "@/component/buttonFit/ButtonFit";
+import ButtonFit from "@/components/buttonFit/ButtonFit";
 import Link from "next/link";
 import React from "react";
 

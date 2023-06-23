@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const ExUseState = () => {
+const ExUseRef = () => {
   const [num, setNum] = useState(0);
   const [input, setInput] = useState("hello everynyan!");
 
@@ -28,34 +28,32 @@ const ExUseState = () => {
         </div>
       </Link>
       <h3 className="text-center">Example of UseState</h3>
-      <div className="grid grid-cols-3 w-full h-20 bg-pink-50">
-        <p className=" text-center pt-5 h-full w-full">{num}</p>
+      <div className="grid grid-cols-3 w-full h-fit bg-pink-50">
+        <p className="p-3 text-center px-5">{num}</p>
         <button
           onClick={countNum}
-          className="bg-pink-100 w-full h-full p-3 hover:bg-pink-200 overflow-auto"
+          className="bg-pink-100 w-full h-fit p-3 hover:bg-pink-200 overflow-auto"
         >
           add one
         </button>
         <button
           onClick={resetNum}
-          className="bg-pink-100 w-full h-full p-3 hover:bg-pink-200 overflow-auto"
+          className="bg-pink-100 w-full h-fit p-3 hover:bg-pink-200 overflow-auto"
         >
           reset
         </button>
       </div>
       <div className="grid grid-cols-2 w-full h-fit bg-pink-50">
-        <p className="row-span-1 col-start-1 col-end-2 p-3 text-center px-5 h-fit">
-          {input}
-        </p>
+        <p className="p-3 text-center px-5">{input}</p>
         <input
           type="text"
           placeholder="type here!"
           onChange={changeInput}
-          className=" row-span-1 col-start-2 col-end-3 bg-pink-50 w-full h-fit p-3 hover:bg-pink-200 border-l-2 border-pink-100"
+          className="bg-pink-50 w-full h-fit p-3 hover:bg-pink-200 overflow-auto border-l-2 border-pink-100"
         ></input>
         <button
           onClick={resetInput}
-          className=" row-span-2 col-start-1 col-end-3 bg-pink-100 w-full h-fit p-3 hover:bg-pink-200"
+          className=" row-span-2 col-start-1 col-end-3 bg-emerald-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto"
         >
           reset
         </button>
@@ -64,4 +62,4 @@ const ExUseState = () => {
   );
 };
 
-export default ExUseState;
+export default ExUseRef;

@@ -1,4 +1,5 @@
 "use client";
+import ButtonFit from "@/components/buttonFit/ButtonFit";
 import Link from "next/link";
 import React, { useReducer, useState } from "react";
 Link;
@@ -27,14 +28,14 @@ const ExUseReducer = () => {
   const [state, dispatch] = useReducer(odi, { num: 0, text: true });
 
   return (
-    <div className="text-3xl text-center flex flex-col gap-5">
+    <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">
       <Link href={"/"}>
         <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
           BACK
         </div>
       </Link>
-      <div>{state.num}</div>
-      <div>{state.text ? "PEAK A" : "BOO!"}</div>
+      <div className=" text-center">{state.num}</div>
+      <div className=" text-center">{state.text ? "PEAK A" : "BOO!"}</div>
       <div className="flex gap-5 justify-center">
         <button
           onClick={() => {
