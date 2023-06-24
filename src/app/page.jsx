@@ -47,7 +47,7 @@ const Contoh = () => {
       {linkContoh.map((v, i, a) => {
         return (
           <Link
-            className="bg-pink-100 w-full h-fit px-5 py-3 text-center overflow-auto hover:bg-pink-200"
+            className="bg-pink-100 w-full h-fit px-5 py-3 text-center overflow-auto hover:bg-pink-200 "
             key={i}
             href={v.url}
           >

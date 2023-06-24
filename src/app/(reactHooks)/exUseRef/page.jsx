@@ -1,6 +1,7 @@
 "use client";
 import React, { useReducer, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ExUseRef = () => {
   const [text, setText] = useState("Bird");
@@ -25,7 +26,14 @@ const ExUseRef = () => {
         </Link>
         <h4 className="text-center p-3 w-10/12">Exsample of useRef</h4>
       </div>
-      <div className="text-center grid grid-cols-4 w-full h-20 bg-pink-50">
+      <Image
+        src={"/chiyo-otosan.PNG"}
+        alt="chiyo father"
+        height={250}
+        width={250}
+        className="absolute bottom-0 right-0"
+      ></Image>
+      <div className=" text-center grid grid-cols-4 w-full h-20 bg-pink-50">
         <input
           className="relative row-span-1 col-start-1 col-end-3 w-full h-full py-3 px-5 bg-pink-50 hover:bg-pink-200"
           type="text"
