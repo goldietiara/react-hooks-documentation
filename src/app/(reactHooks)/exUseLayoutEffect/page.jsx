@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Link from "next/link";
-import axios from "axios";
 import NotFound from "next/navigation";
 
 const ExUseLayoutEffect = () => {
@@ -24,7 +23,7 @@ const ExUseLayoutEffect = () => {
   }, []);
   console.log(data);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const getData = async () => {
       const res = await fetch("https://jsonplaceholder.typicode.com/comments", {
         cache: "no-store",
