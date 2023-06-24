@@ -22,12 +22,12 @@ const ExUseImperativeHandle = () => {
         <div className=" grid grid-col-2 w-fit h-fit gap-5 text-center">
           <h5 className=" row-span-1 col-start-1 col-end-2">parent button</h5>
           <h5 className=" row-span-1 col-start-2 col-end-3">child component</h5>
-          <div className="col-start-1 col-end-2 p-5 bg-pink-50 ">
+          <div className="col-start-1 col-end-2 p-5 bg-pink-50 w-fit flex flex-col">
             <button
               onClick={() => {
                 buttonRef.current.gif();
               }}
-              className="  w-full h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200 border-b-2 border-pink-200"
+              className=" h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200 border-b-2 border-pink-200"
             >
               summon chiyo dad
             </button>
@@ -35,9 +35,9 @@ const ExUseImperativeHandle = () => {
               onClick={() => {
                 buttonRef.current.stopGif();
               }}
-              className="  w-full h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200"
+              className=" h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200"
             >
-              stop
+              bye chiyo dad
             </button>
           </div>
 
