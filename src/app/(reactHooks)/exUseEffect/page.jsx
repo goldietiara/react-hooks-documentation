@@ -22,7 +22,7 @@ const ExUseEffect = () => {
       setData(res.data[num].email);
       console.log(res.data[0].email);
     });
-  }, []);
+  });
 
   return (
     <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">

@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 
 const ExUseState = () => {
   const [num, setNum] = useState(0);
   const [input, setInput] = useState("hello everynyan!");
+  const inputRef = useRef(null);
 
   const countNum = () => {
     setNum(num + 1);
@@ -18,6 +19,7 @@ const ExUseState = () => {
   };
   const resetInput = () => {
     setInput("hello everynyan!");
+    inputRef.current.value = "";
   };
 
   return (
@@ -53,7 +55,8 @@ const ExUseState = () => {
           type="text"
           placeholder="type here!"
           onChange={changeInput}
-          className=" row-span-1 col-start-2 col-end-3 bg-pink-50 w-full h-fit p-3 hover:bg-pink-200 border-l-2 border-pink-100"
+          className=" relative row-span-1 col-start-2 col-end-3 bg-pink-50 w-full h-fit p-3 hover:bg-pink-200 border-l-2 border-pink-100"
+          ref={inputRef}
         ></input>
         <button
           onClick={resetInput}
