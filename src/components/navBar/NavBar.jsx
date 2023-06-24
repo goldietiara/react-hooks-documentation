@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <nav className=" bg-pink-300 w-full h-fit text-center py-3">
+    <nav className=" bg-pink-300 w-full h-fit text-center py-3 text-2xl">
       <Link href={"/"}>
         <h3>REACT HOOKS DOCUMENTATION</h3>
       </Link>

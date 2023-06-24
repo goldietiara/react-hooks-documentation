@@ -22,12 +22,14 @@ const ExUseState = () => {
 
   return (
     <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">
-      <Link href={"/"}>
-        <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
-          BACK
-        </div>
-      </Link>
-      <h3 className="text-center">Example of UseState</h3>
+      <div className="flex mb-10 w-full">
+        <Link href={"/"}>
+          <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
+            BACK
+          </div>
+        </Link>
+        <h4 className="text-center p-3 w-10/12">Exsample of useState</h4>
+      </div>
       <div className="grid grid-cols-3 w-full h-20 bg-pink-50">
         <p className=" text-center pt-5 h-full w-full">{num}</p>
         <button

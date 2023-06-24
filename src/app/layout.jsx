@@ -13,8 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <div className="w-screen h-full flex justify-center">{children}</div>
+        <div className=" font-mono">
+          <NavBar />
+          <div className="w-screen h-full flex justify-center">{children}</div>
+        </div>
       </body>
     </html>
   );
