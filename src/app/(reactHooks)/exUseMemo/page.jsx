@@ -1,13 +1,11 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { notFound } from "next/navigation";
 
 const ExUseMemo = () => {
-  const [email, setEmail] = useState([]);
+  const [data, setData] = useState([]);
   const [output, setOutput] = useState("chiyo.chichi@gmail.com");
-  // const [input, setInput] = useState([]);
-  // const inputRef = useRef(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -19,22 +17,22 @@ const ExUseMemo = () => {
         throw notFound();
       }
       const data = await res.json();
-      setEmail(data);
+      setData(data);
     };
 
     getData();
   }, []);
 
-  const findLongestEmail = (array) => {
-    let longestEmail = array[0].email;
-    for (let i = 1; i < array.length - 2; i++) {
-      if (array[i].email.length > longestEmail.length) {
-        longestEmail = array[i].email;
-      }
-    }
-    console.log(longestEmail);
-    return longestEmail;
-  };
+  // const findLongestEmail = (array) => {
+  //   let longestEmail = array[0].email;
+  //   for (let i = 1; i < array.length - 2; i++) {
+  //     if (array[i].email.length > longestEmail.length) {
+  //       longestEmail = array[i].email;
+  //     }
+  //   }
+  //   console.log(longestEmail);
+  //   return longestEmail;
+  // };
 
   const findShortestEmail = (array) => {
     // length = angka manusia
@@ -49,15 +47,22 @@ const ExUseMemo = () => {
     return shortestEmail;
   };
 
-  // const a = (array) => {
-  //   let temp = [];
-  //   array.forEach((v, i, a) => {
-  //     if ((array[i].email[0] = "a")) {
-  //       temp.push(array[i].email);
-  //     }
-  //   });
-  //   return temp;
-  // };
+  const findLongestEmail = (array) => {
+    if (!array) return null;
+
+    let longestEmail = "";
+    for (let i = 0; i < array.length; i++) {
+      let currentEmail = array[i].email;
+      if (currentEmail.length > longestEmail.length) {
+        longestEmail = currentEmail;
+      }
+    }
+    console.log(longestEmail);
+    return longestEmail;
+  };
+
+  // const getShortestEmail = useMemo(() => findShortestEmail(data), [data]);
+  const getLongestEmail = useMemo(() => findLongestEmail(data), [data]);
 
   return (
     <div className=" w-10/12 h-20 flex flex-col text-3xl gap-5 m-5 text-center">
@@ -73,16 +78,9 @@ const ExUseMemo = () => {
         <div className=" row-span-1 col-start-1 col-end-4 py-3 px-5 bg-pink-50 text-left">
           what type of email would you like to find?
         </div>
-
-        {/* <input
-          className=" relative w-full h-full py-3 px-5 bg-pink-100 hover:bg-pink-200"
-          type="text"
-          placeholder="start with an"
-          ref={inputRef}
-        /> */}
         <button
           onClick={() => {
-            setOutput(findShortestEmail(email));
+            setOutput(findShortestEmail(data));
           }}
           className=" w-full h-full py-3 px-5 bg-pink-100 hover:bg-pink-200 "
         >
@@ -90,7 +88,7 @@ const ExUseMemo = () => {
         </button>
         <button
           onClick={() => {
-            setOutput(findLongestEmail(email));
+            setOutput(getLongestEmail);
           }}
           className=" w-full h-full py-3 px-5 bg-pink-100 hover:bg-pink-200 border-x-2 border-pink-200"
         >
@@ -109,7 +107,6 @@ const ExUseMemo = () => {
             {output}
           </div>
         </div>
-        {/* {output(a(email))} */}
       </div>
     </div>
   );
