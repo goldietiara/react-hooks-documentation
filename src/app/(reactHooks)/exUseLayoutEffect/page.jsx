@@ -6,6 +6,7 @@ import NotFound from "next/navigation";
 const ExUseLayoutEffect = () => {
   const [data, setData] = useState(["nyan"]);
   const [data2, setData2] = useState(["nyan"]);
+  const [animation, setanimation] = useState(false);
 
   useLayoutEffect(() => {
     const getData = async () => {
@@ -67,7 +68,7 @@ const ExUseLayoutEffect = () => {
                 </div>
               );
             })}
-          </div>{" "}
+          </div>
         </div>
         <div className=" row-span-2 col-start-3 col-end-5 w-full h-96 bg-pink-50 p-3 text-left">
           <div className=" w-full h-full overflow-auto">
@@ -80,12 +81,19 @@ const ExUseLayoutEffect = () => {
             })}
           </div>
         </div>
-        <Link
+
+        {/* <button
+          className=" relative row-span-4 col-start-4 col-end-5 w-full h-fit py-3 px-5 bg-pink-100 hover:bg-pink-200"
+          onClick={()=>{ setanimation(!animation)}}
+          >reload</button> */}
+        {/* <Link
           href={"/exUseLayoutEffect"}
           className=" relative row-span-4 col-start-4 col-end-5 w-full h-fit py-3 px-5 bg-pink-100 hover:bg-pink-200"
         >
-          <button>reload</button>
-        </Link>
+          <button
+          onClick={}
+          >reload</button>
+        </Link> */}
       </div>
     </div>
   );

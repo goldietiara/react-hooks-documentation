@@ -17,19 +17,6 @@ const ImpHandle = forwardRef((props, ref) => {
 
   return (
     <div className=" grid grid-col-1 w-fit h-fit gap-5 text-center">
-      {/* <h5>child component</h5>
-      <button
-        onClick={gif}
-        className=" w-full h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200"
-      >
-        summon chiyo dad
-      </button>
-      <button
-        onClick={stopGif}
-        className=" w-full h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200"
-      >
-        stop
-      </button> */}
       <Image src={img} height={310} width={374}></Image>
     </div>
   );
