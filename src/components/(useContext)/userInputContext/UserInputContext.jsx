@@ -18,6 +18,7 @@ const UserInputContext = () => {
         className=" w-full h-full py-3 px-5 bg-pink-100 hover:bg-pink-200 border-l-2 border-pink-200"
         onClick={() => {
           setUsername(inputRef.current.value);
+          inputRef.current.value = "";
         }}
       >
         send
@@ -26,6 +27,7 @@ const UserInputContext = () => {
         className=" w-full h-full py-3 px-5 bg-pink-100 hover:bg-pink-200 border-l-2 border-pink-200"
         onClick={() => {
           setUsername("chiyo dad");
+          inputRef.current.value = "";
         }}
       >
         reset
