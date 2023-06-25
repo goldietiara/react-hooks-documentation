@@ -15,7 +15,7 @@ const ExUseImperativeHandle = () => {
           </div>
         </Link>
         <h4 className="text-center p-3 w-10/12">
-          Exsample of useImperativeHandle
+          Example of useImperativeHandle
         </h4>
       </div>
       <div className=" w-full h-fit flex justify-center">

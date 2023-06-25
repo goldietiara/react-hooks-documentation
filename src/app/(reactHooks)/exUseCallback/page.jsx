@@ -24,7 +24,7 @@ const ExUseCallback = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useCallback</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useCallback</h4>
       </div>
       <div className="relative self-center bg-pink-100 border-2 border-pink-200">
         <Image

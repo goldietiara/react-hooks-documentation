@@ -72,7 +72,7 @@ const ExUseMemo = () => {
             BACK
           </div>
         </Link>
-        <h4 className="p-3 w-10/12">Exsample of useMemo</h4>
+        <h4 className="p-3 w-10/12">Example of useMemo</h4>
       </div>
       <div className="grid grid-cols-3 w-full h-fit self-center">
         <div className=" row-span-1 col-start-1 col-end-4 py-3 px-5 bg-pink-50 text-left">

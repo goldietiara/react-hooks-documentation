@@ -32,7 +32,7 @@ const ExUseEffect = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useEffect</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useEffect</h4>
       </div>
       <div className=" grid grid-cols-3 pt-5 h-fit">
         <h4 className=" row-span-1 col-start-1 col-end-3 bg-pink-50 py-3 px-5 w-full">

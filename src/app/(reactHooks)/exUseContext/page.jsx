@@ -17,7 +17,7 @@ const ExUseContext = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useContext</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useContext</h4>
       </div>
       <appContext.Provider
         value={{ username, setUsername }}

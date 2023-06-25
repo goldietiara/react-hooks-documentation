@@ -30,7 +30,7 @@ const ExUseState = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useState</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useState</h4>
       </div>
       <div className="grid grid-cols-3 w-full h-20 bg-pink-50">
         <p className=" text-center pt-5 h-full w-full">{num}</p>

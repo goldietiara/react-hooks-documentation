@@ -35,7 +35,7 @@ const ExUseReducer = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useReducer</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useReducer</h4>
       </div>
       <div className=" grid grid-cols-4 w-full">
         <div className=" row-span-1 col-start-1 col-end-5 text-center bg-pink-50 py-3">

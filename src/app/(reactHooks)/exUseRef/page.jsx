@@ -24,7 +24,7 @@ const ExUseRef = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useRef</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useRef</h4>
       </div>
       <Image
         src={"/chiyo-otosan.PNG"}

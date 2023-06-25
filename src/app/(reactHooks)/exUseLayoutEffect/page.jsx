@@ -50,7 +50,7 @@ const ExUseLayoutEffect = () => {
             BACK
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Exsample of useLayoutEffect</h4>
+        <h4 className="text-center p-3 w-10/12">Example of useLayoutEffect</h4>
       </div>
       <div className=" w-full h-fit grid grid-cols-4 text-center gap-5">
         <div className=" row-span-1 col-start-1 col-end-3 w-full h-fit py-3">
