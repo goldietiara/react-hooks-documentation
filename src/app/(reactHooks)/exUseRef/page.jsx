@@ -5,16 +5,8 @@ import Image from "next/image";
 
 const ExUseRef = () => {
   const [text, setText] = useState("Bird");
+  const [opacity, setOpacity] = useState("opacity-0");
   const inputRef = useRef(null);
-
-  const send = () => {
-    inputRef.current.focus();
-    setText(inputRef.current.value);
-    inputRef.current.value = "";
-  };
-  const reset = () => {
-    setText("Bird");
-  };
 
   return (
     <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">
@@ -31,7 +23,10 @@ const ExUseRef = () => {
         alt="chiyo father"
         height={250}
         width={250}
-        className="absolute bottom-0 right-0"
+        onLoad={() => {
+          setOpacity("opacity-100");
+        }}
+        className={`absolute bottom-0 right-0 transform transition-all duration-1000 ease-in-out ${opacity}`}
       ></Image>
       <div className=" text-center grid grid-cols-4 w-full h-20 bg-pink-50">
         <input
@@ -42,13 +37,22 @@ const ExUseRef = () => {
         />
         <button
           className=" row-span-1 col-start-3 col-end-4 bg-pink-100 w-full h-full py-3 px-5 hover:bg-pink-200 border-r-2 border-pink-200"
-          onClick={send}
+          onClick={() => {
+            inputRef.current.focus();
+            setText(inputRef.current.value);
+            inputRef.current.value = "";
+            setOpacity("opacity-0");
+          }}
         >
           send
         </button>
         <button
           className=" row-span-1 col-start-4 col-end-5 bg-pink-100 w-full h-full py-3 px-5 hover:bg-pink-200"
-          onClick={reset}
+          onClick={() => {
+            setText("Bird");
+            inputRef.current.value = "";
+            setOpacity("opacity-100");
+          }}
         >
           reset
         </button>
