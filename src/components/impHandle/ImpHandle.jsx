@@ -17,9 +17,10 @@ const ImpHandle = forwardRef((props, ref) => {
 
   return (
     <div className=" grid grid-col-1 w-fit h-fit gap-5 text-center">
-      <Image src={img} height={310} width={374}></Image>
+      <Image src={img} height={310} width={374} alt=""></Image>
     </div>
   );
 });
+ImpHandle.displayName = "ImpHandle";
 
 export default ImpHandle;

@@ -60,10 +60,10 @@ const ExUseRef = () => {
           Hello Everynyan!
         </p>
         <p className=" col-start-1 col-end-5 w-full h-full py-3 px-5 bg-pink-50 border-y-2 border-pink-100">
-          How are you? I'm fine Thank You
+          How are you? I&apos;m fine Thank You
         </p>
         <p className=" col-start-1 col-end-5 w-full h-full py-3 px-5 bg-pink-50">
-          I wish I were a{" "}
+          I wish I were a
           <span className=" font-medium text-pink-600">{text}</span>
         </p>
       </div>

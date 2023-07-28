@@ -6,7 +6,6 @@ import NotFound from "next/navigation";
 const ExUseLayoutEffect = () => {
   const [data, setData] = useState(["nyan"]);
   const [data2, setData2] = useState(["nyan"]);
-  const [animation, setanimation] = useState(false);
 
   useLayoutEffect(() => {
     const getData = async () => {
@@ -40,8 +39,6 @@ const ExUseLayoutEffect = () => {
   }, []);
   console.log(data2);
 
-  //   const data1 = await getData();
-
   return (
     <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">
       <div className="flex mb-10 w-full">
@@ -63,7 +60,10 @@ const ExUseLayoutEffect = () => {
           <div className=" w-full h-full overflow-auto">
             {data2.map((v, i, a) => {
               return (
-                <div className="bg-pink-100 w-full h-fit px-5 py-3 text-left overflow-auto hover:bg-pink-200 mt-3 ">
+                <div
+                  key={i}
+                  className="bg-pink-100 w-full h-fit px-5 py-3 text-left overflow-auto hover:bg-pink-200 mt-3 "
+                >
                   {v.email}
                 </div>
               );
@@ -74,26 +74,16 @@ const ExUseLayoutEffect = () => {
           <div className=" w-full h-full overflow-auto">
             {data.map((v, i, a) => {
               return (
-                <div className="bg-pink-100 w-full h-fit px-5 py-3 text-left overflow-auto hover:bg-pink-200 mt-3 ">
+                <div
+                  key={i}
+                  className="bg-pink-100 w-full h-fit px-5 py-3 text-left overflow-auto hover:bg-pink-200 mt-3 "
+                >
                   {v.email}
                 </div>
               );
             })}
           </div>
         </div>
-
-        {/* <button
-          className=" relative row-span-4 col-start-4 col-end-5 w-full h-fit py-3 px-5 bg-pink-100 hover:bg-pink-200"
-          onClick={()=>{ setanimation(!animation)}}
-          >reload</button> */}
-        {/* <Link
-          href={"/exUseLayoutEffect"}
-          className=" relative row-span-4 col-start-4 col-end-5 w-full h-fit py-3 px-5 bg-pink-100 hover:bg-pink-200"
-        >
-          <button
-          onClick={}
-          >reload</button>
-        </Link> */}
       </div>
     </div>
   );
