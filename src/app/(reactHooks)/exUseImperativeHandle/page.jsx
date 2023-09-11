@@ -7,8 +7,12 @@ const ExUseImperativeHandle = () => {
   const buttonRef = useRef(null);
 
   return (
-    <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">
-      <div className="flex mb-10 w-full">
+    <div
+      className=" w-10/12 h-fit flex flex-col gap-5 m-5
+      text-md
+      md:text-2xl"
+    >
+      <section className="flex mb-10 w-full">
         <Link href={"/"}>
           <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
             BACK
@@ -17,8 +21,8 @@ const ExUseImperativeHandle = () => {
         <h4 className="text-center p-3 w-10/12">
           Example of useImperativeHandle
         </h4>
-      </div>
-      <div className=" w-full h-fit flex justify-center">
+      </section>
+      <section className=" w-full h-fit flex justify-center">
         <div className=" grid grid-col-2 w-fit h-fit gap-5 text-center">
           <h5 className=" row-span-1 col-start-1 col-end-2">parent button</h5>
           <h5 className=" row-span-1 col-start-2 col-end-3">child component</h5>
@@ -45,7 +49,23 @@ const ExUseImperativeHandle = () => {
             <ImpHandle ref={buttonRef}></ImpHandle>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className=" relative mt-10 p-5 w-full self-center bg-pink-50 border-2 border-pink-200">
+        <ol
+          className=" grid gap-5 
+          md:text-lg
+          text-sm"
+        >
+          <li>
+            <span className=" text-pink-500 font-semibold">
+              useImperativeHandle
+            </span>{" "}
+            used to control the child function form parent with a reference from
+            child
+          </li>
+        </ol>
+      </section>
     </div>
   );
 };

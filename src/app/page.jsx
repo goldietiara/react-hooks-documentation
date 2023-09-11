@@ -32,14 +32,14 @@ const linkContoh = [
     title: "useContext",
     url: "/exUseContext",
   },
-  {
-    title: "useMemo",
-    url: "/exUseMemo",
-  },
-  {
-    title: "useCallback",
-    url: "/exUseCallback",
-  },
+  // {
+  //   title: "useMemo",
+  //   url: "/exUseMemo",
+  // },
+  // {
+  //   title: "useCallback",
+  //   url: "/exUseCallback",
+  // },
 ];
 
 const Contoh = () => {
@@ -71,8 +71,7 @@ const Contoh = () => {
           <p className=" font-medium  mb-1">What is a Hook?</p>
           <p className=" font-light leading-relaxed">
             A Hook is a special function that lets you “hook into” React
-            features. For example, useState is a Hook that lets you add React
-            state to function components. We’ll learn other Hooks later.
+            features.
           </p>
           <p className=" font-medium  mb-1 mt-3">When would I use a Hook?</p>
           <p className=" font-light leading-relaxed">

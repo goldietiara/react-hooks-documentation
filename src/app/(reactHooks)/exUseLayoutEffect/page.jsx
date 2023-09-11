@@ -40,16 +40,20 @@ const ExUseLayoutEffect = () => {
   console.log(data2);
 
   return (
-    <div className=" w-10/12 h-fit flex flex-col text-3xl gap-5 m-5">
-      <div className="flex mb-10 w-full">
+    <div
+      className=" w-10/12 h-fit flex flex-col gap-5 m-5
+      text-md
+      md:text-2xl"
+    >
+      <section className="flex mb-10 w-full ">
         <Link href={"/"}>
           <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
             BACK
           </div>
         </Link>
         <h4 className="text-center p-3 w-10/12">Example of useLayoutEffect</h4>
-      </div>
-      <div className=" w-full h-fit grid grid-cols-4 text-center gap-5">
+      </section>
+      <section className=" w-full h-fit grid grid-cols-4 text-center gap-5 ">
         <div className=" row-span-1 col-start-1 col-end-3 w-full h-fit py-3">
           useEffect
         </div>
@@ -84,7 +88,23 @@ const ExUseLayoutEffect = () => {
             })}
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className=" relative mt-10 p-5 w-full self-center bg-pink-50 border-2 border-pink-200">
+        <ol
+          className=" grid gap-5 
+          md:text-lg
+          text-sm"
+        >
+          <li>
+            <span className=" text-pink-500 font-semibold">
+              useLayoutEffect
+            </span>{" "}
+            used to replicate the component lifecycle on react functional, will
+            render the UI first then render the data inside useLayoutEffect
+          </li>
+        </ol>
+      </section>
     </div>
   );
 };
