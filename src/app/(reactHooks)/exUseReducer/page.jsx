@@ -53,7 +53,7 @@ const ExUseReducer = () => {
       </section>
 
       <div
-        className=" bg-indigo-950  mb-24 rounded-3xl text-white 
+        className=" bg-indigo-950  mb-48 rounded-3xl text-white 
       p-5 w-11/12
       md:p-10 md:w-9/12
       lg:w-7/12"

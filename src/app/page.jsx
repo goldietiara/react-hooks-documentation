@@ -45,14 +45,14 @@ const HooksLink = [
 const Home = () => {
   return (
     <div
-      className="grid h-[100%]
+      className="grid h-[100%] 
     grid-cols-1
     md:grid-cols-2"
     >
       <section
-        className=" flex justify-center items-start overflow-auto 
+        className=" flex justify-center items-start overflow-auto
       border-indigo-950 border-t-2 p-6 text-base
-      md:border-r-2 md:border-t-0 md:p-10 md:text-lg"
+      md:border-r-2 md:border-t-0 md:p-10 md:text-lg md:pb-40"
       >
         <div
           className=" flex flex-col gap-5 bg-yellow-300/80 rounded-3xl outline outline-2 outline-indigo-950 overflow-y-auto text-center 
