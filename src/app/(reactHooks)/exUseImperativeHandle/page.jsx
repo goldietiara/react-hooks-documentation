@@ -2,70 +2,92 @@
 import Link from "next/link";
 import React, { useRef } from "react";
 import ImpHandle from "@/components/impHandle/ImpHandle";
+import { ImArrowLeft2 } from "react-icons/im";
 
 const ExUseImperativeHandle = () => {
   const buttonRef = useRef(null);
 
   return (
     <div
-      className=" w-10/12 h-fit flex flex-col gap-5 m-5
+      className="h-fit w-full flex flex-col gap-5 items-center
       text-md
       md:text-2xl"
     >
-      <section className="flex mb-10 w-full">
+      <section className=" flex items-center bg-yellow-300/80 py-2 px-6 w-full border-b-2 border-indigo-950 mb-5">
         <Link href={"/"}>
-          <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
-            BACK
+          <div
+            className="p-2  rounded-full outline outline-2 outline-indigo-950
+            bg-indigo-950 text-white transition-all duration-100 ease-in-out
+            hover:bg-pink-50 hover:text-indigo-950 "
+          >
+            <ImArrowLeft2
+              className="
+            text-sm
+            md:text-lg"
+            />
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">
-          Example of useImperativeHandle
+        <h4 className="w-10/12 font-bold px-5 text-center">
+          useImperativeHandle
         </h4>
       </section>
-      <section className=" w-full h-fit flex justify-center">
-        <div className=" grid grid-col-2 w-fit h-fit gap-5 text-center">
-          <h5 className=" row-span-1 col-start-1 col-end-2">parent button</h5>
-          <h5 className=" row-span-1 col-start-2 col-end-3">child component</h5>
-          <div className="col-start-1 col-end-2 p-5 bg-pink-50 w-fit flex flex-col">
-            <button
-              onClick={() => {
-                buttonRef.current.gif();
-              }}
-              className=" h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200 border-b-2 border-pink-200"
-            >
-              summon chiyo dad
-            </button>
-            <button
-              onClick={() => {
-                buttonRef.current.stopGif();
-              }}
-              className=" h-fit bg-pink-100 px-5 py-3 hover:bg-pink-200"
-            >
-              bye chiyo dad
-            </button>
-          </div>
 
-          <div className=" row-span-2 col-start-2 col-end-3 p-5 bg-pink-50">
-            <ImpHandle ref={buttonRef}></ImpHandle>
-          </div>
-        </div>
-      </section>
+      <div
+        className=" bg-indigo-950  mb-40 rounded-3xl text-white 
+      p-5 w-11/12
+      md:p-10 md:w-9/12
+      lg:w-7/12"
+      >
+        <section className=" w-full h-fit flex justify-center">
+          <div
+            className=" grid  w-fit h-fit gap-5 text-center 
+          grid-cols-1
+          md:grid-cols-2"
+          >
+            <div className=" pt-5 w-full h-fit flex flex-col bg-indigo-900/50">
+              <h5 className="mb-5 py-3">parent button</h5>
+              <button
+                onClick={() => {
+                  buttonRef.current.gif();
+                }}
+                className=" h-fit px-5 py-3 hover:bg-indigo-900/30 border-[2px] border-indigo-900/80"
+              >
+                state 2
+              </button>
+              <button
+                onClick={() => {
+                  buttonRef.current.stopGif();
+                }}
+                className=" h-fit px-5 py-3 hover:bg-indigo-900/30 border-[2px] border-indigo-900/80"
+              >
+                state 1
+              </button>
+            </div>
 
-      <section className=" relative mt-10 p-5 w-full self-center bg-pink-50 border-2 border-pink-200">
-        <ol
-          className=" grid gap-5 
+            <div className=" p-5 h-fit bg-indigo-900/50">
+              <h5 className="mb-5 py-3">child component</h5>
+
+              <ImpHandle ref={buttonRef}></ImpHandle>
+            </div>
+          </div>
+        </section>
+
+        <section className=" relative mt-10 p-5 w-full self-center">
+          <ol
+            className=" grid gap-5 
           md:text-lg
           text-sm"
-        >
-          <li>
-            <span className=" text-pink-500 font-semibold">
-              useImperativeHandle
-            </span>{" "}
-            used to control the child function form parent with a reference from
-            child
-          </li>
-        </ol>
-      </section>
+          >
+            <li>
+              <span className=" text-pink-500 font-semibold">
+                useImperativeHandle
+              </span>{" "}
+              used to control the child function form parent with a reference
+              from child
+            </li>
+          </ol>
+        </section>
+      </div>
     </div>
   );
 };

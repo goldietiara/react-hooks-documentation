@@ -2,6 +2,7 @@
 import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { ImArrowLeft2 } from "react-icons/im";
 
 const ExUseEffect = () => {
   const [data, setData] = useState("henlo everynyan!");
@@ -26,63 +27,79 @@ const ExUseEffect = () => {
 
   return (
     <div
-      className=" w-10/12 h-fit flex flex-col gap-5 m-5
+      className="h-fit w-full flex flex-col gap-5 items-center
       text-md
       md:text-2xl"
     >
-      <section className="flex mb-10 w-full">
+      <section className=" flex items-center bg-yellow-300/80 py-2 px-6 w-full border-b-2 border-indigo-950 mb-5">
         <Link href={"/"}>
-          <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
-            BACK
+          <div
+            className="p-2  rounded-full outline outline-2 outline-indigo-950
+            bg-indigo-950 text-white transition-all duration-100 ease-in-out
+            hover:bg-pink-50 hover:text-indigo-950 "
+          >
+            <ImArrowLeft2
+              className="
+            text-sm
+            md:text-lg"
+            />
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Example of useEffect</h4>
-      </section>
-      <section className=" grid grid-cols-3 pt-5 h-fit">
-        <h4 className=" row-span-1 col-start-1 col-end-3 bg-pink-50 py-3 px-5 w-full">
-          {data}
-        </h4>
-        <h4 className=" row-span-1 col-start-3 col-end-4 bg-pink-50 border-l-2 border-pink-100 py-3 px-5">
-          id: {num}
-        </h4>
-        <button
-          className=" bg-pink-100 px-5 py-3 hover:bg-pink-200"
-          onClick={count}
-        >
-          next
-        </button>
-        <button
-          className={`  px-5 py-3 border-x-2 border-pink-200 bg-pink-100 ${
-            num === 0
-              ? ` text-black/50 cursor-default`
-              : `hover:bg-pink-200 text-black`
-          }`}
-          onClick={back}
-          disabled={num === 0}
-        >
-          back
-        </button>
-        <button
-          className=" bg-pink-100 px-5 py-3 hover:bg-pink-200"
-          onClick={reset}
-        >
-          reset
-        </button>
+        <h4 className="w-10/12 font-bold px-5 text-center">useEffect</h4>
       </section>
 
-      <section className=" relative mt-10 p-5 w-full self-center bg-pink-50 border-2 border-pink-200">
-        <ol
-          className=" grid gap-5 
+      <div
+        className=" bg-indigo-950 mb-44 rounded-3xl text-white 
+      p-5 w-11/12
+      md:p-10 md:w-9/12
+      lg:w-7/12"
+      >
+        <section className=" grid grid-cols-3 h-fit bg-indigo-900/50">
+          <h4 className=" row-span-1 col-start-1 col-end-3 py-3 px-5 w-full overflow-auto">
+            {data}
+          </h4>
+          <h4 className=" row-span-1 col-start-3 col-end-4 py-3 px-5">
+            id: {num}
+          </h4>
+          <button
+            className=" px-5 py-3 hover:bg-indigo-900/80 border-[1px] border-indigo-900/80"
+            onClick={count}
+          >
+            next
+          </button>
+          <button
+            className={`  px-5 py-3 border-[1px] border-indigo-900/80 ${
+              num === 0
+                ? ` text-white/50 cursor-default`
+                : `hover:bg-indigo-900/80 text-white`
+            }`}
+            onClick={back}
+            disabled={num === 0}
+          >
+            back
+          </button>
+          <button
+            className=" px-5 py-3 hover:bg-indigo-900/80 border-[1px] border-indigo-900/80"
+            onClick={reset}
+          >
+            reset
+          </button>
+        </section>
+
+        <section className=" relative mt-10 p-5 w-full self-center ">
+          <ol
+            className=" grid gap-5 
           md:text-lg
           text-sm"
-        >
-          <li>
-            <span className=" text-pink-500 font-semibold">useEffect</span> used
-            to replicate the component lifecycle on react functional, will
-            re-render everytime the data inside useEffect changed
-          </li>
-        </ol>
-      </section>
+          >
+            <li>
+              <span className=" text-pink-500 font-semibold">useEffect</span>{" "}
+              used to replicate the component lifecycle on react functional,
+              will re-render everytime the data inside useEffect changed
+            </li>
+          </ol>
+        </section>
+      </div>
     </div>
   );
 };

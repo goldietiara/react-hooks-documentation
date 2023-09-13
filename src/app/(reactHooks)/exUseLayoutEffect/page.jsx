@@ -2,6 +2,7 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import NotFound from "next/navigation";
+import { ImArrowLeft2 } from "react-icons/im";
 
 const ExUseLayoutEffect = () => {
   const [data, setData] = useState(["nyan"]);
@@ -41,70 +42,91 @@ const ExUseLayoutEffect = () => {
 
   return (
     <div
-      className=" w-10/12 h-fit flex flex-col gap-5 m-5
-      text-md
-      md:text-2xl"
+      className="h-fit w-full flex flex-col gap-5 items-center
+    text-md
+    md:text-2xl"
     >
-      <section className="flex mb-10 w-full ">
+      <section className=" flex items-center bg-yellow-300/80 py-2 px-6 w-full border-b-2 border-indigo-950 mb-5">
         <Link href={"/"}>
-          <div className="bg-pink-100 w-fit h-fit p-3 hover:bg-pink-200 overflow-auto">
-            BACK
+          <div
+            className="p-2  rounded-full outline outline-2 outline-indigo-950
+          bg-indigo-950 text-white transition-all duration-100 ease-in-out
+          hover:bg-pink-50 hover:text-indigo-950 "
+          >
+            <ImArrowLeft2
+              className="
+          text-sm
+          md:text-lg"
+            />
           </div>
         </Link>
-        <h4 className="text-center p-3 w-10/12">Example of useLayoutEffect</h4>
-      </section>
-      <section className=" w-full h-fit grid grid-cols-4 text-center gap-5 ">
-        <div className=" row-span-1 col-start-1 col-end-3 w-full h-fit py-3">
-          useEffect
-        </div>
-        <div className=" row-span-1 col-start-3 col-end-5 w-full h-fit py-3">
-          useLayoutEffect
-        </div>
-        <div className=" row-span-2 col-start-1 col-end-3 w-full h-96 bg-pink-50 p-3 text-left">
-          <div className=" w-full h-full overflow-auto">
-            {data2.map((v, i, a) => {
-              return (
-                <div
-                  key={i}
-                  className="bg-pink-100 w-full h-fit px-5 py-3 text-left overflow-auto hover:bg-pink-200 mt-3 "
-                >
-                  {v.email}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className=" row-span-2 col-start-3 col-end-5 w-full h-96 bg-pink-50 p-3 text-left">
-          <div className=" w-full h-full overflow-auto">
-            {data.map((v, i, a) => {
-              return (
-                <div
-                  key={i}
-                  className="bg-pink-100 w-full h-fit px-5 py-3 text-left overflow-auto hover:bg-pink-200 mt-3 "
-                >
-                  {v.email}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <h4 className="w-10/12 font-bold px-5 text-center">useLayoutEffect</h4>
       </section>
 
-      <section className=" relative mt-10 p-5 w-full self-center bg-pink-50 border-2 border-pink-200">
-        <ol
-          className=" grid gap-5 
+      <div
+        className=" bg-indigo-950  mb-40 rounded-3xl text-white 
+    p-5 w-11/12
+    md:p-10 md:w-9/12
+    lg:w-7/12"
+      >
+        <section
+          className=" w-full h-fit grid text-center gap-5 
+        grid-cols-1 
+        md:grid-cols-2 "
+        >
+          <div className="  w-full h-fit">
+            <p className=" py-3 mb-3">useEffect</p>
+            <div className="  w-full h-96 p-3 text-left bg-indigo-900/50">
+              <div className=" w-full h-full overflow-auto">
+                {data2.map((v, i, a) => {
+                  return (
+                    <div
+                      key={i}
+                      className=" w-full h-fit px-5 py-3 text-left overflow-auto cursor-pointer hover:bg-indigo-950/50 mt-3 bg-indigo-900/80"
+                    >
+                      {v.email}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className=" w-full h-fit ">
+            <p className=" py-3 mb-3">useLayoutEffect</p>
+            <div className=" w-full h-96 p-3 text-left bg-indigo-900/50">
+              <div className=" w-full h-full overflow-auto">
+                {data.map((v, i, a) => {
+                  return (
+                    <div
+                      key={i}
+                      className=" w-full h-fit px-5 py-3 text-left overflow-auto cursor-pointer hover:bg-indigo-950/50 mt-3 bg-indigo-900/80"
+                    >
+                      {v.email}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className=" relative mt-10 p-5 w-full self-center ">
+          <ol
+            className=" grid gap-5 
           md:text-lg
           text-sm"
-        >
-          <li>
-            <span className=" text-pink-500 font-semibold">
+          >
+            <li>
+              <span className=" text-pink-500 font-semibold">
+                useLayoutEffect
+              </span>{" "}
+              used to replicate the component lifecycle on react functional,
+              will render the UI first then render the data inside
               useLayoutEffect
-            </span>{" "}
-            used to replicate the component lifecycle on react functional, will
-            render the UI first then render the data inside useLayoutEffect
-          </li>
-        </ol>
-      </section>
+            </li>
+          </ol>
+        </section>
+      </div>
     </div>
   );
 };

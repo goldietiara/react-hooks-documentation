@@ -1,9 +1,9 @@
-import ButtonFit from "@/components/buttonFit/ButtonFit";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { PiStarFourFill, PiSmileyWinkBold } from "react-icons/pi";
 
-const linkContoh = [
+const HooksLink = [
   {
     title: "useState",
     url: "/exUseState",
@@ -42,53 +42,97 @@ const linkContoh = [
   // },
 ];
 
-const Contoh = () => {
+const Home = () => {
   return (
-    <div className=" w-full h-full flex flex-col justify-between gap-20">
-      <div className=" grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 text-lg md:text-xl lg:text-2xl text-gray-900 mt-20 mx-5 md:mx-10 lg:mx-40">
-        {linkContoh.map((v, i, a) => {
-          return (
-            <Link
-              className="bg-pink-100 w-full h-fit px-5 py-3 text-center overflow-auto hover:bg-pink-200 "
-              key={i}
-              href={v.url}
-            >
-              {v.title}
-            </Link>
-          );
-        })}
-      </div>
-      <div className=" relative flex w-11/12 h-fit bg-pink-50 border-2 border-pink-200 self-center ">
-        <Image
-          src={"/chiyo-chichi-fliped.PNG"}
-          height={250}
-          width={250}
-          alt="chiyo-chichi"
-          className="absolute bottom-0 left-0 "
-        ></Image>
-        <div className=" w-6/12 h-full"></div>
-        <div className="py-3 px-5">
-          <p className=" font-medium  mb-1">What is a Hook?</p>
-          <p className=" font-light leading-relaxed">
-            A Hook is a special function that lets you “hook into” React
-            features.
-          </p>
-          <p className=" font-medium  mb-1 mt-3">When would I use a Hook?</p>
-          <p className=" font-light leading-relaxed">
-            If you write a function component and realize you need to add some
-            state to it, previously you had to convert it to a class. Now you
-            can use a Hook inside the existing function component.
-          </p>
-          <p className=" font-light leading-relaxed mt-2">
-            to get a better understanding please visit{" "}
-            <span className=" text-pink-600 font-medium border-b-2 border-pink-600">
-              https://legacy.reactjs.org/docs/hooks-intro.html
-            </span>
-          </p>
+    <div
+      className="grid h-[100%]
+    grid-cols-1
+    md:grid-cols-2"
+    >
+      <section
+        className=" flex justify-center items-start overflow-auto 
+      border-indigo-950 border-t-2 p-6 text-base
+      md:border-r-2 md:border-t-0 md:p-10 md:text-lg"
+      >
+        <div
+          className=" flex flex-col gap-5 bg-yellow-300/80 rounded-3xl outline outline-2 outline-indigo-950 overflow-y-auto text-center 
+        h-[100%] w-[100%] p-5
+        md:w-[90%] md:p-6"
+        >
+          {HooksLink.map((v, i, a) => {
+            return (
+              <Link href={`${v.url}`} key={i}>
+                <div className=" relative w-full h-fit mb-[50px] group">
+                  <PiSmileyWinkBold
+                    className=" absolute top-0 -right-1 z-30 shrink-0 text-3xl rotate-12 bg-pink-200 rounded-full
+                  hidden transition-all duration-300 ease-in
+                  group-hover:flex"
+                  />
+                  <div
+                    className=" absolute bg-white rounded-lg outline outline-2 outline-indigo-950
+                    w-[96%] h-[40px] p-2 top-2 right-1 
+                    md:h-[50px] md:p-3 md:right-2 "
+                  >
+                    {v.title}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      </div>
+      </section>
+
+      <section
+        className=" flex-col 
+      text-sm p-6 row-start-1 
+      md:text-base md:p-10 md:col-start-2 "
+      >
+        <h1
+          className="  font-bold 
+        text-xl mb-3
+        md:text-3xl md:mb-6
+        lg:text-6xl lg:mb-10"
+        >
+          What is a Hook?
+        </h1>
+
+        <p
+          className=" 
+        my-3
+        md:my-6"
+        >
+          A Hook is a special function that lets you “hook into” React features.
+        </p>
+        <p
+          className="
+        mb-6
+        md:my-10"
+        >
+          If you write a function component and realize you need to add some
+          state to it, previously you had to convert it to a class. Now you can
+          use a Hook inside the existing function component.
+        </p>
+
+        <p
+          className=" leading-10
+        text-xs mb-3 
+        md:text-sm md:leading-10"
+        >
+          to get a better understanding please visit:{" "}
+          <a
+            className="  font-bold py-2 px-4 rounded-lg outline-2 outline outline-indigo-950
+           bg-pink-500 text-white transition-all ease-in-out duration-300
+           hover:text-indigo-950 hover:bg-yellow-300/80
+           "
+            href="https://react.dev/reference/react"
+            target="_blank"
+          >
+            here
+          </a>
+        </p>
+      </section>
     </div>
   );
 };
 
-export default Contoh;
+export default Home;
