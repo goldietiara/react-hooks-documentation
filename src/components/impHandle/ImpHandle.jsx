@@ -10,13 +10,18 @@ const ImpHandle = forwardRef((props, ref) => {
     gif() {
       setImg("/chiyo-dad-meme.gif");
     },
-    stopGif() {
-      setImg("/chiyo-dad-meme.jpeg");
-    },
   }));
 
   return (
     <div className=" grid grid-col-1 w-fit h-fit gap-5 text-center">
+      <button
+        onClick={() => {
+          setImg("/chiyo-dad-meme.jpeg");
+        }}
+        className=" h-fit px-5 py-3 hover:bg-indigo-900/30 border-[2px] border-indigo-900/80"
+      >
+        hide cat button
+      </button>
       <Image src={img} height={310} width={374} alt=""></Image>
     </div>
   );

@@ -8,22 +8,6 @@ const ExUseLayoutEffect = () => {
   const [data, setData] = useState(["nyan"]);
   const [data2, setData2] = useState(["nyan"]);
 
-  useLayoutEffect(() => {
-    const getData = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/comments", {
-        cache: "no-store",
-      });
-
-      if (!res.ok) {
-        throw NotFound();
-      }
-      const data1 = await res.json();
-      setData(data1);
-    };
-    getData();
-  }, []);
-  console.log(data);
-
   useEffect(() => {
     const getData = async () => {
       const res = await fetch("https://jsonplaceholder.typicode.com/comments", {
@@ -37,8 +21,26 @@ const ExUseLayoutEffect = () => {
       setData2(data3);
     };
     getData();
+    console.log("useEffect");
   }, []);
-  console.log(data2);
+  // console.log(data2);
+
+  useLayoutEffect(() => {
+    const getData = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/comments", {
+        cache: "no-store",
+      });
+
+      if (!res.ok) {
+        throw NotFound();
+      }
+      const data1 = await res.json();
+      setData(data1);
+    };
+    getData();
+    console.log("useLayoutEffect");
+  }, []);
+  // console.log(data);
 
   return (
     <div
@@ -120,9 +122,11 @@ const ExUseLayoutEffect = () => {
               <span className=" text-pink-500 font-semibold">
                 useLayoutEffect
               </span>{" "}
-              used to replicate the component lifecycle on react functional,
-              will render the UI first then render the data inside
-              useLayoutEffect
+              is the same as useEffect, but runs synchronously before the
+              browser render the screen. allows you to perform actions
+              synchronously after the component has rendered but before the
+              browser visually updates the screen. to give a smoother user
+              experience.
             </li>
           </ol>
         </section>

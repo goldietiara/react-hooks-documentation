@@ -100,8 +100,8 @@ const ExUseRef = () => {
           >
             <li>
               <span className=" text-pink-500 font-semibold">useRef</span> used
-              to reference a value of an element. won't re-render when the state
-              changed
+              to reference a value of an element. since it is only reference the
+              value it won't perform re-render.
             </li>
           </ol>
         </section>

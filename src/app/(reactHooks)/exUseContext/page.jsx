@@ -8,7 +8,7 @@ import { ImArrowLeft2 } from "react-icons/im";
 export const appContext = createContext(null);
 
 const ExUseContext = () => {
-  const [username, setUsername] = useState("chiyo dad");
+  const [username, setUsername] = useState("GoldieTiara");
 
   return (
     <div
@@ -34,7 +34,7 @@ const ExUseContext = () => {
       </section>
 
       <div
-        className=" bg-indigo-950  mb-72 rounded-3xl text-white 
+        className=" bg-indigo-950  mb-60 rounded-3xl text-white 
       p-5 w-11/12
       md:p-10 md:w-9/12
       lg:w-7/12"
@@ -44,10 +44,13 @@ const ExUseContext = () => {
           value={{ username, setUsername }}
           className=" grid grid-cols-1 w-10/12 h-20 self-center"
         >
+          {/* output */}
           <UserConext></UserConext>
+
+          {/* input */}
           <UserInputContext></UserInputContext>
         </appContext.Provider>
-        <section className=" relative mt-10 p-5 w-full self-center">
+        <section className=" relative mt-16 p-5 w-full self-center">
           <ol
             className=" grid gap-5 
           md:text-lg
@@ -55,7 +58,8 @@ const ExUseContext = () => {
           >
             <li>
               <span className=" text-pink-500 font-semibold">useContext</span>{" "}
-              used to control the parent state from child
+              used to read or access data from parent or context, without
+              passing props between components.
             </li>
           </ol>
         </section>

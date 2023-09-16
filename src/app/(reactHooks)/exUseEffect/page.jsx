@@ -94,8 +94,9 @@ const ExUseEffect = () => {
           >
             <li>
               <span className=" text-pink-500 font-semibold">useEffect</span>{" "}
-              used to replicate the component lifecycle on react functional,
-              will re-render everytime the data inside useEffect changed
+              used to replicate the component lifecycle on react class component
+              into react functional component, it will re-render everytime the
+              data inside useEffect changed (usually data from API/server).
             </li>
           </ol>
         </section>

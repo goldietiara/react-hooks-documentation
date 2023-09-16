@@ -40,27 +40,20 @@ const ExUseImperativeHandle = () => {
       >
         <section className=" w-full h-fit flex justify-center">
           <div
-            className=" grid  w-fit h-fit gap-5 text-center 
+            className=" grid w-fit h-fit gap-5 text-center 
           grid-cols-1
           md:grid-cols-2"
           >
-            <div className=" pt-5 w-full h-fit flex flex-col bg-indigo-900/50">
-              <h5 className="mb-5 py-3">parent button</h5>
+            <div className=" pt-5 w-full h-fit flex flex-col bg-indigo-900/50 p-5">
+              <h5 className="mb-5 py-3">parent component</h5>
+
               <button
                 onClick={() => {
                   buttonRef.current.gif();
                 }}
                 className=" h-fit px-5 py-3 hover:bg-indigo-900/30 border-[2px] border-indigo-900/80"
               >
-                state 2
-              </button>
-              <button
-                onClick={() => {
-                  buttonRef.current.stopGif();
-                }}
-                className=" h-fit px-5 py-3 hover:bg-indigo-900/30 border-[2px] border-indigo-900/80"
-              >
-                state 1
+                show cat button
               </button>
             </div>
 
@@ -82,8 +75,8 @@ const ExUseImperativeHandle = () => {
               <span className=" text-pink-500 font-semibold">
                 useImperativeHandle
               </span>{" "}
-              used to control the child function form parent with a reference
-              from child
+              lets a child component customize what the parent component can do
+              with it through a ref.
             </li>
           </ol>
         </section>
