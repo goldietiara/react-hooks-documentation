@@ -122,8 +122,7 @@ const ExUseLayoutEffect = () => {
               <span className=" text-pink-500 font-semibold">
                 useLayoutEffect
               </span>{" "}
-              is the same as useEffect, but runs synchronously before the
-              browser render the screen. allows you to perform actions
+              is the same as useEffect, but it allows you to perform actions
               synchronously after the component has rendered but before the
               browser visually updates the screen. to give a smoother user
               experience.

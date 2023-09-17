@@ -8,6 +8,13 @@ const ExUseEffect = () => {
   const [data, setData] = useState("henlo everynyan!");
   const [num, setNum] = useState(0);
 
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/comments").then((res) => {
+      setData(res.data[num].email);
+      console.log("call api");
+    });
+  }, [num]);
+
   const count = () => {
     setNum(num + 1);
   };
@@ -17,13 +24,6 @@ const ExUseEffect = () => {
   const reset = () => {
     setNum(0);
   };
-
-  useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/comments").then((res) => {
-      setData(res.data[num].email);
-      console.log(res.data[0].email);
-    });
-  }, [num]);
 
   return (
     <div
@@ -59,7 +59,7 @@ const ExUseEffect = () => {
             {data}
           </h4>
           <h4 className=" row-span-1 col-start-3 col-end-4 py-3 px-5">
-            id: {num}
+            index: {num}
           </h4>
           <button
             className=" px-5 py-3 hover:bg-indigo-900/80 border-[1px] border-indigo-900/80"

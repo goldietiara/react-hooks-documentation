@@ -63,7 +63,7 @@ const ExUseReducer = () => {
             {state.num}
           </div>
           <div className=" row-span-2 col-start-1 col-end-5 text-center py-3 bg-indigo-900/50 border-[1px] border-indigo-900/80">
-            {state.text ? "PEAK A" : "BOO!"}
+            {state.text ? "TRUE" : "FALSE"}
           </div>
 
           <button

@@ -5,6 +5,7 @@ const UserInputContext = () => {
   const { setUsername } = useContext(appContext);
   const inputRef = useRef(null);
 
+  
   return (
     <div className=" grid grid-cols-2 h-20">
       <p className="text-sm text-white/30">child-2 component:</p>
